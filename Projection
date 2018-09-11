@@ -1,0 +1,19 @@
+clc
+clear all
+
+%first example
+A1=[4 5;1 5;2 5]
+b= [5 2 3]'
+rank(A1)       % A1 columns are independant
+LI=inv(A1'*A1)*A1'
+a1=LI*A1        % Gives the identity matrix
+pinv(A1)        %Gives the same matrix
+
+
+%Second example
+A2=[1 2 3 4;5 6 8 4 ;2 5 4 7;5 8 7 9;2 5 3 6]
+rank(A2)
+b=[2 3 4 5]'
+left_inv=inv(A2'*A2)*A2'
+a2=left_inv*A2      %Identity matrix
+pinv(A2)       %Gives the same left_inv matrix
